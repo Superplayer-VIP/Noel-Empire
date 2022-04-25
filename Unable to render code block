@@ -1,0 +1,1602 @@
+Noel empire
+全称：Noel Ticket Token
+简称NTT
+数量2.1亿 Ticket
+平台token全称Noel empire coin
+简称：NEC
+数量：9800万
+Noel Empire tickets NTT is the only entry into the Noel Empire only token, 
+metauniverse in all the output of revenue can be exchanged into the Noel Empire only platform token NEC,
+your income determines how much your ticket, the token used in NFT is also NEC Kai source code as follows:
+class Block:
+scheduler.scheduleEvery(std::bind(&CConnman::DumpAddresses, this), DUMP_PEERS_INTERVAL * 1000);
+ 
+void CConnman::DumpAddresses()
+{
+    int64_t nStart = GetTimeMillis();
+ 
+    CAddrDB adb;
+    adb.Write(addrman);
+ 
+    LogPrint(BCLog::NET, "Flushed %d addresses to peers.dat  %dms\n",
+           addrman.size(), GetTimeMillis() - nStart)
+   int64_t nStart = GetTimeMillis();
+    {
+        CAddrDB adb;
+        if (adb.Read(addrman))
+            LogPrintf("Loaded %i addresses from peers.dat  %dms\n", addrman.size(), GetTimeMillis() - nStart);
+        else {
+            addrman.Clear(); // Addrman can be in an inconsistent state after failure, reset it
+            LogPrintf("Invalid or missing peers.dat; recreating\n");
+            DumpAddresses();
+        }
+
+
+        self.index = index
+        self.timestamp = timestamp
+        self.data = data
+        self.previous_hash = previous_hash
+        self.hash = self.hash_block()
+        # 初始化参数
+    def hash_block(self):
+        sha = hasher.sha256()#使用sha256进行加密
+        sha.update(
+            bytes(
+                str(self.index) + str(self.timestamp) + str(self.data) + str(
+                    self.previous_hash), 'utf-8'))#更新数据,返回给我们一个16进制的加密结果
+        return sha.hexdigest()
+#创建一个起源块
+def create_genesis_block():
+    # 起源块后续的块链都会以一种方式创建
+    return Block(0, date.datetime.now(), "Genesis Block", "0")
+#起源块后续的块链都会以一种方式创建
+def next_block(last_block):
+    this_index = last_block.index + 1
+    this_timestamp = date.datetime.now()
+    this_data = "你好,我是块链 " + str(this_index)
+    this_hash = last_block.hash
+    return Block(this_index, this_timestamp, this_data, this_hash)
+def main():
+    # 起源块后续的块链都会以一种方式创建
+    blockchain = [create_genesis_block()]
+    previous_block = blockchain[0]
+    # 手动构造块链,索引为0的任意先前块链,起源块之后的追加块链
+    num_of_blocks_to_add = 100
+    # 添加到链上
+    for i in range(0, num_of_blocks_to_add):
+        block_to_add = next_block(previous_block)
+        blockchain.append(block_to_add)
+        previous_block = block_to_add
+        print("Block #{} has been added to the"
+              "blockchain!".format(block_to_add.index))
+        print("Hash: {}\n".format(block_to_add.hash))
+if __name__ == "__main__":
+    main()
+    values = [10, 21, 4, 7, 12]
+squares = []
+for x in values:
+    squares.append(x**2)
+print squares
+[100, 441, 16, 49, 144]
+列表推导式可以使用更简单的方法来创建这个列表：
+
+In [2]:
+values = [10, 21, 4, 7, 12]
+squares = [x**2 for x in values]
+print squares
+values = [10, 21, 4, 7, 12]
+squares = [x**2 for x in values if x <= 10]
+print squares
+square_set = {x**2 for x in values if x <= 10}
+print(square_set)
+square_dict = {x: x**2 for x in values if x <= 10}
+print(square_dict)
+          img_mode: BGR
+          channel_first: False
+      - DetLabelEncode: # Class handling label
+      - CopyPaste:
+      - IaaAugment:
+          augmenter_args:
+            - { 'type': Fliplr, 'args': { 'p': 0.5 } }
+            ＃用法：su verocoin -c“ ./kill_session ip：port”
+./run_verocoin_server调试“ dispatcher.request_dispatcher.sessions ['$ 1']。stop（）”
+def create_config（filename = None）：
+    config = ConfigParser。ConfigParser（）
+    ＃设置一些默认值，这些默认值将被配置文件覆盖
+    配置。add_section（'服务器'）
+    配置。设置（“服务器”，“横幅”，“欢迎使用Verocoin！”）
+    配置。设置（'server'，'banner_file'，'/etc/verocoin.banner'）
+    配置。设置（'server'，'host'，'localhost'）
+    配置。设置（'server'，'verocoin_rpc_port'，'8000'）
+    配置。设置（'server'，'report_host'，''）
+    配置。设置（'server'，'stratum_tcp_port'，'50001'）
+    配置。设置（'server'，'stratum_tcp_ssl_port'，'50002'）
+    配置。设置（'server'，'report_stratum_tcp_port'，''）
+    配置。设置（'server'，'report_stratum_tcp_ssl_port'，''）
+    配置。设置（'server'，'ssl_certfile'，''）
+    配置。设置（'server'，'ssl_keyfile'，''）
+    配置。设置（'server'，'irc'，'no'）
+    配置。设置（'server'，'irc_nick'，''）
+    配置。设置（'server'，'coin'，''）
+    配置。设置（'server'，'donation_address'，''）
+    配置。设置（'server'，'max_subscriptions'，'10000'）
+
+    配置。add_section（'leveldb'）
+    配置。设置（'leveldb'，'path'，'/dev/shm/verocoin_db'）
+    配置。设置（'leveldb'，'pruning_limit'，'100'）
+    配置。设置（'leveldb'，'reorg_limit'，'100'）
+    配置。设置（'leveldb'，'utxo_cache'，str（64 * 1024 * 1024））
+    配置。设置（'leveldb'，'hist_cache'，str（128 * 1024 * 1024））
+    配置。设置（'leveldb'，'addr_cache'，str（16 * 1024 * 1024））
+    配置。设置（'leveldb'，'profiler'，'no'）
+
+    ＃设置网络参数
+    配置。add_section（'network'）
+    配置。设置（'network'，'type'，'bitcoin_main'）
+
+    ＃尝试在默认路径中找到配置文件
+    如果不是文件名：
+        对于路径中（'的/ etc /'，''）：
+            文件名 = 路径 + 'addplus.conf'
+            如果 os。路径。isfile（filename）：
+                打破
+
+    如果不是os。路径。isfile（filename）：
+        % “找不到维罗币配置文件“打印％s”” ％ 文件名
+        sys。出口（1）
+
+    try_read_config（配置，文件名）
+
+    load_banner（配置）
+
+    返回配置
+
+
+def run_rpc_command（参数，verocoin_rpc_port）：
+    cmd = 参数 [ 0 ]
+    导入xmlrpclib
+    服务器 = xmlrpclib。ServerProxy（'http：// localhost：％d' ％ verocoin_rpc_port）
+    func = getattr（服务器，cmd）
+    r = 函数（* 参数 [ 1：]）
+    如果 cmd == '会话'：
+        现在 = 时间。时间（）
+        打印“类型地址子版本时间”
+        对于项目中的 [R ：
+            打印 '％4S％-21％三分％7S％.2f' ％ （ 项目。获得（'名称'），
+                                                   项目。得到（'地址'），
+                                                   项目。（“订阅”），
+                                                   项目。得到（'版本'），
+                                                   （现在 - 项。获得（'时间'））
+                                                   ）
+    elif cmd == '调试'：
+        打印 [R
+    其他：
+        打印json。转储（r，indent = 4，sort_keys = True）
+
+
+def cmd_banner_update（）：
+    load_banner（调度。共享。配置）
+    返回 真
+
+def cmd_getinfo（）：
+    返回 {
+        'blocks'：chain_proc。储存。高度，
+        '对等体'：len个（server_proc。同行），
+        '会话'：len个（调度员。request_dispatcher。get_sessions（）），
+        '看'：len个（chain_proc.watched_addresses）
+        '缓存'：len个（chain_proc。history_cache）
+        }
+
+def cmd_sessions（）：
+    返回 地图（拉姆达小号）：{ “时间”：小号。时间，
+                          “名称”：s。名称，
+                          “地址”：s。地址，
+                          “版本”：s。版本，
+                          “”：len（小号。订阅）}订阅个
+               调度员。request_dispatcher。get_sessions（））
+
+def cmd_numsessions（）：
+    返回 len 个（调度员。request_dispatcher。get_sessions（））
+
+def cmd_peers（）：
+    返回 server_proc。同行。键（）
+
+def cmd_numpeers（）：
+    返回 len个（server_proc。同行）
+
+
+马力 = 无
+def cmd_guppy（）：
+    从孔雀鱼进口 HPY
+    全球地球
+    hp = hpy（）
+
+def cmd_debug（s）：
+    导入回溯
+    导入 gc
+    如果：
+        试用：
+            结果 = str（eval（s））
+        除了：
+            err_lines = traceback。format_exc（）。分割线（）
+            结果 = '％s | ％s的％（err_lines [ - 3 ]，err_lines [ - 1 ]）
+        返回 结果
+
+
+def get_port（配置，名称）：
+    试用：
+        返回 config.getint（'服务器'，名称）
+    除了：
+        返回无
+
+
+＃将它们为共同利益，用于“调试”
+共享 = 无
+chain_proc = 无
+server_proc = 无
+调度员=无
+运输 = []
+tcp_server = 无
+ssl_server = 无
+
+def start_server（配置）：
+    难度共享，chain_procserver_proc，调度程序
+    重定向tcp_server，ssl_server
+
+    实用程序。init_logger（）
+    主机=配置。get（'server'，'host'）
+    stratum_tcp_port = get_port（配置，'stratum_tcp_port'）
+    stratum_tcp_ssl_port = get_port（配置，'stratum_tcp_ssl_port'）
+    ssl_certfile = 配置。获取（'server'，'ssl_certfile'）
+    ssl_keyfile = 配置。get（'server'，'ssl_keyfile'）
+
+    setup_network_params（配置）
+
+    如果 ssl_certfile 为 '' 或 ssl_keyfile 为 ''：
+        stratum_tcp_ssl_port = 无
+
+    print_log（“正在启动Verocoin服务器”，主机）
+
+    ＃创建中心
+    调度员=调度员（配置）
+    共享 = 调度程序。
+
+    ＃处理终止信号
+    导入信号
+    def 处理程序（signum = None，frame = None）：
+        print_log（'使用信号调用的信号处理程序'，signum）
+        分享了。停止（）
+    对于 SIG 在 [ 信号。SIGTERM，信号。SIGHUP，信号。SIGQUIT ]：
+        信号。信号（sig，handler）
+
+    ＃创建并注册主持人
+    chain_proc = BlockchainProcessor（配置，共享）
+    调度员。注册（'blockchain'，chain_proc）
+
+    server_proc = ServerProcessor（配置，共享）
+    调度员。注册（'server'，server_proc）
+
+- 数据标注与合成
+    - [半自动标注工具PPOCRLabel](./PPOCRLabel/README_ch.md)
+    - [数据合成工具Style-Text](./StyleText/README_ch.md)
+    - [其它数据标注工具](./doc/doc_ch/data_annotation.md)
+    - [其它数据合成工具](./doc/doc_ch/data_synthesis.md)
+- OCR学术圈
+    - [两阶段算法](./doc/doc_ch/algorithm_overview.md)
+    - [端到端PGNet算法](./doc/doc_ch/pgnet.md)
+    - [基于Python脚本预测引擎推理](./doc/doc_ch/inference.md)
+    - [使用PaddleOCR架构添加新算法](./doc/doc_ch/add_new_algorithm.md)
+- 数据标注与合成
+    - [半自动标注工具PPOCRLabel](./PPOCRLabel/README_ch.md)
+    - [数据合成工具Style-Text](./StyleText/README_ch.md)
+    - [其它数据标注工具](./doc/doc_ch/data_annotation.md)
+    - [其它数据合成工具](./doc/doc_ch/data_synthesis.md)
+- 数据集
+    - [通用中英文OCR数据集](./doc/doc_ch/datasets.md)
+    - [手写中文OCR数据集](./doc/doc_ch/handwritten_datasets.md)
+
+# limitations under the License.
+import os
+import sys
+import threading
+from PIL import Image
+__dir__ = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(__dir__)
+
+class TextRecognizer(object):
+    def __init__(self, args):
+        self.lock = threading.RLock()
+        self.rec_image_shape = [int(v) for v in args.rec_image_shape.split(",")]
+        self.character_type = args.rec_char_type
+        self.rec_batch_num = args.rec_batch_num
+                gsrm_slf_attn_bias2)
+
+    def __call__(self, img_list):
+        self.lock.acquire()
+        img_num = len(img_list)
+        # Calculate the aspect ratio of all text bars
+        width_list = []
+                rec_res[indices[beg_img_no + rno]] = rec_result[rno]
+            if self.benchmark:
+                self.autolog.times.end(stamp=True)
+        self.lock.release()
+        return rec_res, time.time() - st
+
+<component name="ChangeListManager">
+    <list default="true" id="b281f22b-8035-491c-b74b-97f79a4e8672" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/projects/21503882/imports.yml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/21503882/imports.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/Eatzhy/imports.yml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/Eatzhy/imports.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/JDAI-CV/imports.yml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/JDAI-CV/imports.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/lufei222/imports.yml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/lufei222/imports.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/wepe/imports.yml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/wepe/imports.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/xuhongv/imports.yml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/xuhongv/imports.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/yangjiechina/imports.yml" beforeDir="false" afterPath="$PROJECT_DIR$/projects/yangjiechina/imports.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+  <component name="RunManager" selected="Python.creatfolder">
+    <configuration name="creatfolder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mirrors-settings" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/creatfolder.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mirrors-settings" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.creatfolder" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1491" height="288" key="GridCell.Tab.0.bottom" timestamp="1608533617460">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1491" height="288" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608533617460" />
+    <state width="1491" height="288" key="GridCell.Tab.0.center" timestamp="1608533617460">
+      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1343" height="259" key="GridCell.Tab.0.bottom" timestamp="1626434455430">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1491" height="288" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608533617460" />
+    <state width="1491" height="288" key="GridCell.Tab.0.left" timestamp="1608533617460">
+      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1343" height="259" key="GridCell.Tab.0.bottom/0.0.2048.1112@0.0.2048.1112" timestamp="1626434455430" />
+    <state width="1343" height="259" key="GridCell.Tab.0.center" timestamp="1626434455430">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    使用 iptables 进行端口转发的示例：iptables -t nat -A PREROUTING -p tcp --dport 110 -j REDIRECT --dport 50002
+$ sudo apt-get install make g++ python-leveldb libboost-all-dev libssl-dev libdb++-dev pkg-config libevent-dev
+$ sudo su - 比特币
+$ cd ~/src && wget https://bitcoin.org/bin/bitcoin-core-0.13.2/bitcoin-0.13.2.tar.gz
+$ sha256sum 比特币-0.13.2.tar.gz | grep 621201189c0409cb17a5073278872dcdcfff1ea147ead6958b55e94416b896d7
+$ tar xfz 比特币-0.13.2.tar.gz
+$ cd 比特币-0.13.2
+$ ./configure --disable-wallet --without-miniupnpc
+$ 制作
+$ strip src/bitcoind src/bitcoin-cli src/bitcoin-tx
+$ cp -a src/bitcoind src/bitcoin-cli src/bitcoin-tx ~/bin
+主机=本地主机
+＃个端口
+mport React from "react";
+import SideNav from "../../components/SideNav/SideNav";
+import ProfileInfo from "../../components/ProfileInfo/ProfileInfo";
+import HealthDetail from "../../components/HealthDetail/HealthDetail";
+import UpcomingCards from "../../components/upcomingCards/UpcomingCards";
+import AnalyticsCard from "../../components/AnalyticsCard/AnalyticsCard";
+// import CalendarSlider from "../../components/CalendarSlider/CalendarSlider";
+import Calendar from "../../components/CalendarSlider/Calendar";
+import { ReactComponent as Search } from "../../assets/search.svg";
+import { ReactComponent as Cross } from "../../assets/red-cross.svg";
+import { ReactComponent as Home } from "../../assets/home.svg";
+import { ReactComponent as Settings } from "../../assets/settings.svg";
+import { ReactComponent as Question } from "../../assets/question.svg";
+import { ReactComponent as Heart1 } from "../../assets/heart2.svg";
+import { ReactComponent as Mail } from "../../assets/mail.svg";
+import { ReactComponent as Clocksvg } from "../../assets/clock.svg";
+import { Container, Row, Col } from "react-bootstrap";
+import Clock from "react-live-clock";
+
+// import { useMediaQuery } from "react-responsive";
+import DiscountsCard from "../../components/DiscountsCard/DiscountsCard";
+import Graphs from "../../components/Graphs/Graphs";
+
+const Dashboard = () => {
+  // const isMobile = useMediaQuery({
+  //     query: "(max-device-width: 700px)"
+  //   });
+  return (
+    <>
+      <main role="main" className="main-wrapper">
+        <div className="sidenav-wrapper">
+          <section className="sidenav-container">
+            <SideNav />
+          </section>
+        </div>
+        <div className="maincontent-wrapper">
+          <section className="dashboard-info-section">
+            <Container fluid>
+              <Row>
+                <Col sm={8} className="p-0 dashboard-metrics-container">
+                  {/* search wrapper style classes reused from dashboard page styles file */}
+                  {/* search and time section starts here  */}
+                  <section className="searchbar-wrapper">
+                    <div className="searchbar-container">
+                      <Search />
+
+                      <div className="searchbar-input ml-sm-3">
+                        <input
+                          type="text"
+                          placeholder="Search for symptoms.."
+                        />
+                      </div>
+                    </div>
+                    {/*  brand logo for mobile deivces visible only on mobile deivices  */}
+                    <div className="brand-sm-wrapper">
+                      <div className="brand-sm-icon">
+                        <Cross />
+                      </div>
+                      <div className="brand-sm-info">Medi</div>
+                    </div>
+                    {/* //ends here */}
+                    <div className="dashboard-datetime-wrapper">
+                      <span className="clock-icon">
+                        <Clocksvg />
+                      </span>
+                      <Clock
+                        format={"h:mm:ss A,dddd, MMMM Mo, YYYY"}
+                        ticking={true}
+                      />{" "}
+                    </div>
+                  </section>
+                  {/* Search section ends here  */}
+                  {/* Dashboard page metrics  wrapper starts here */}
+                  <section className="dashboard-metrics-wrapper">
+                    <DiscountsCard />
+                    <Graphs />
+                    <div className="d-flex justify-content-between">
+                      <AnalyticsCard name="analytics" />
+                      <AnalyticsCard />
+                    </div>
+                  </section>
+                  {/* Dashboard page metrics  wrapper ends here */}
+                </Col>
+                <Col sm={4} className="dashboard-info-container px-5">
+                  <ProfileInfo />
+                  <HealthDetail />
+
+                  <Calendar />
+
+                  <UpcomingCards type={"dent"} />
+                  <UpcomingCards />
+                  <div className="dashboard-secondary-title mt-4 mb-2 mx-5 px-2">
+                    Your treatment
+                  </div>
+                  <UpcomingCards type={"drug"} />
+                  <UpcomingCards type={"vitamin"} />
+                </Col>
+              </Row>
+            </Container>
+          </section>
+        </div>
+
+        {/* //visible only on mobile deivices */}
+        <div className="sidenav-sm-container">
+          <div style={{ width: "30px", height: "30px" }}>
+            <Home />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Settings />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Question />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Heart1 />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Mail />
+          </div>
+        </div>
+        {/* //ends here */}
+      </main>
+    </>
+  );
+};
+
+export default Dashboard;
+ 41  
+src/Pages/Dashboard/_dashboard.scss
+@@ -0,0 +1,41 @@
+.dashboard-metrics-container {
+  background-color: $color-tertiary3;
+  border-radius: 2em;
+  .dashboard-datetime-wrapper {
+    padding: 0.7em 1em;
+    background: $color-primary2;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $color-tertiary1;
+    border-radius: 1.2em;
+    .clock-icon {
+      align-items: center;
+      margin-right: 5px;
+
+      color: $color-primary1;
+      fill: $color-primary1;
+    }
+  }
+  //main wrapper
+  .dashboard-metrics-wrapper {
+    margin-top: 2.5em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+  }
+}
+
+.dashboard-secondary-title {
+  font-size: 1.3rem;
+  color: $color-tertiary1;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboard-metrics-container {
+    border-radius: 0rem;
+    margin-bottom: 3rem;
+    .dashboard-datetime-wrapper {
+      display: none;
+    }
+  }
+}
+ 162  
+src/Pages/FinalDashboard/FinalDashboard.js
+@@ -0,0 +1,162 @@
+import React from "react";
+import SideNav from "../../components/SideNav/SideNav";
+import MyAppoinments from "../../components/MyAppoinments/MyAppoinments";
+import { ReactComponent as Search } from "../../assets/search.svg";
+import { ReactComponent as Cross } from "../../assets/red-cross.svg";
+import { ReactComponent as Home } from "../../assets/home.svg";
+import { ReactComponent as Settings } from "../../assets/settings.svg";
+import { ReactComponent as Question } from "../../assets/question.svg";
+import { ReactComponent as Heart1 } from "../../assets/heart2.svg";
+import { ReactComponent as Mail } from "../../assets/mail.svg";
+import { ReactComponent as Clocksvg } from "../../assets/clock.svg";
+import profile from "../../assets/profile.jpg";
+import Payments from "../../components/Payments/Payments";
+import { Container, Row, Col } from "react-bootstrap";
+import Clock from "react-live-clock";
+import Graphs from "../../components/Graphs/Graphs";
+import Analyzes from "../../components/Analyzes/Analyzes";
+import Calendar from "../../components/CalendarSlider/Calendar";
+
+const FinalDashboard = () => {
+  const appoinments = [
+    {
+      id: 1,
+      Name: "John Campbell",
+      Specialist: "Dentist",
+      Date: "20 Mar 2020",
+      Time: "11:00 AM",
+      Photo: profile,
+      pending: false
+    },
+    {
+      id: 2,
+      Name: "Mary Adams",
+      Specialist: "Therapist",
+      Date: "15 Jan 2020",
+      Time: "08:00 AM",
+      Photo: profile,
+      pending: true
+    },
+    {
+      id: 3,
+      Name: "Dan Mitchell",
+      Specialist: "Cardiologist",
+      Date: "18 Dec 2019",
+      Time: "12:00 AM",
+      Photo: profile,
+      pending: true
+    },
+    {
+      id: 4,
+      Name: "Oscar Wilson",
+      Specialist: "Physcologist",
+      Date: "11 Nov 2020",
+      Time: "08:00 AM",
+      Photo: profile,
+      pending: false
+    }
+  ];
+  return (
+    <>
+      <main role="main" className="main-wrapper">
+        <div className="sidenav-wrapper">
+          <section className="sidenav-container">
+            <SideNav />
+          </section>
+        </div>
+        <div className="maincontent-wrapper fimain-content-wrapper">
+          <section className="dashboard-info-section">
+            <Container fluid>
+              <Row>
+                <Col sm={8} className="p-0 fidashboard-metrics-container">
+                  {/* search wrapper style classes reused from dashboard page styles file */}
+                  {/* search and time section starts here  */}
+                  <section className="searchbar-wrapper">
+                    <div className="searchbar-container">
+                      <Search />
+
+                      <div className="searchbar-input ml-sm-3">
+                        <input
+                          type="text"
+                          placeholder="Search for symptoms.."
+                        />
+                      </div>
+                    </div>
+                    {/*  brand logo for mobile deivces visible only on mobile deivices  */}
+                    <div className="brand-sm-wrapper">
+                      <div className="brand-sm-icon">
+                        <Cross />
+                      </div>
+                      <div className="brand-sm-info">Medi</div>
+                    </div>
+                    {/* //ends here */}
+                    <div className="dashboard-datetime-wrapper">
+                      <span className="clock-icon">
+                        <Clocksvg />
+                      </span>
+                      <Clock
+                        format={"h:mm:ss A,dddd, MMMM Mo, YYYY"}
+                        ticking={true}
+                      />{" "}
+                    </div>
+                  </section>
+                  {/* Search section ends here  */}
+                  {/* Dashboard page metrics  wrapper starts here */}
+                  <div className="fd-info-container px-5 py-4 mx-3">
+                    <Graphs />
+                    <div className="dashboard-secondary-title">
+                      My Appoinments
+                    </div>
+                    <MyAppoinments appoinments={appoinments} />
+                  </div>
+                </Col>
+                <Col sm={4} className="dashboard-info-container px-5">
+                  <div className="profile-img mt-5 pt-4 mb-5 ">
+                    <img src={profile} alt="profile" />
+                  </div>
+                  <Analyzes />
+                  <div className="dashboard-secondary-title mt-5">
+                    This month's treatment calendar
+                  </div>
+                  <div
+                    style={{
+                      background: "white",
+                      borderRadius: "1em",
+                      paddingBottom: "20px"
+                    }}
+                  >
+                    <Calendar />
+                  </div>
+                  <div className="dashboard-secondary-title mt-5">Payments</div>
+                  <Payments />
+                </Col>
+              </Row>
+            </Container>
+          </section>
+        </div>
+
+        {/* //visible only on mobile deivices */}
+        <div className="sidenav-sm-container">
+          <div style={{ width: "30px", height: "30px" }}>
+            <Home />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Settings />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Question />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Heart1 />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Mail />
+          </div>
+        </div>
+        {/* //ends here */}
+      </main>
+    </>
+  );
+};
+
+export default FinalDashboard;
+verocoin_rpc_port = 8000
+stratum_tcp_port = 50001
+#stratum_tcp_ssl_port = 50002
+#report_host =
+#report_stratum_tcp_port = 50001
+#report_stratum_tcp_ssl_port = 50002
+横幅=欢迎使用Verocoin！
+横幅文件 = /etc/verocoin.banner
+#irc =否
+#irc_nick = <您的电影名称>
+#irc_bind_ip = <外部IP地址>
+#ssl_certfile = /path/to/verocoin-server.crt
+#ssl_keyfile = /path/to/verocoin-server.key
+日志文件= /var/log/verocoin.log
+捐赠地址 =
+
+[级别数据库]
+＃数据库的路径
+路径=
+＃对每一个地址，如果历史记录进行长限制，则将要消灭
+    <state width="1491" height="288" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608533617460" />
+    <state width="1491" height="288" key="GridCell.Tab.0.right" timestamp="1608533617460">
+      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1343" height="259" key="GridCell.Tab.0.center/0.0.2048.1112@0.0.2048.1112" timestamp="1626434455430" />
+    <state width="1343" height="259" key="GridCell.Tab.0.left" timestamp="1626434455429">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1491" height="288" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608533617460" />
+    <state x="402" y="93" width="672" height="676" key="search.everywhere.popup" timestamp="1608533772078">
+      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1343" height="259" key="GridCell.Tab.0.left/0.0.2048.1112@0.0.2048.1112" timestamp="1626434455429" />
+    <state width="1343" height="259" key="GridCell.Tab.0.right" timestamp="1626434455430">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="402" y="93" width="672" height="676" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608533772078" />
+    <state width="1343" height="259" key="GridCell.Tab.0.right/0.0.2048.1112@0.0.2048.1112" timestamp="1626434455430" />
+  </component>
+</project>
+group:
+  name: '61501'
+  description: ''
+  projects:
+  - name: 'java-tankerwar-'
+    description: ''
+    mirrorRelease: false
+    topic: ''
+ 
+/ .pnp
+.pnp.js
+
+#测试
+/覆盖范围
+
+#生产
+/构建
+“@fortawesome/fontawesome-svg-core”：“ ^1.2.28 ”，
+    “@fortawesome/free-brands-svg-icons”：“ ^5.13.0 ”，
+    “@fortawesome/free-solid-svg-icons”：“ ^5.13.0 ”，
+    “@fortawesome/react-fontawesome”：“ ^0.1.9 ”，
+    “@material-ui/core”：“ ^4.9.11 ”，
+    “@testing-library/jest-dom”：“ ^4.2.4 ”，
+    “@testing-library/react”：“ ^9.3.2 ”，
+    “@testing-library/user-event”：“ ^7.1.2 ”，
+    “引导程序”：“ ^4.4.1 ”，
+    “chart.js”：“ ^2.9.3 ”，
+    “轻快”：“ ^2.2.1 ”，
+    “时刻”：“ ^2.24.0 ”，
+    “反应”：“ ^16.13.1 ”，
+    “反应引导”：“ ^1.0.0 ”，
+    “react-chartjs-2”：“ ^2.9.0 ”，
+    “反应域” ：“ ^16.13.1 ”，
+    “反应轻弹组件”：“ ^3.5.0 ”，
+    “反应实时时钟”：“ ^4.0.5 ”，
+    “反应支付卡组件”：“ ^0.2.1 ”，
+    “反应响应”：“ ^8.0.3 ”，
+    “反应路由器dom”：“ ^5.1.2 ”，
+    “反应脚本”：“ 3.4.1 ”
+  },
+  “脚本”：{
+    “开始”：“反应脚本开始”，
+    “构建”：“反应脚本构建”，
+    “测试”：“反应脚本测试”，
+    “弹出”： “反应脚本弹出”
+  },
+  “eslint配置”：{
+    “扩展”：“反应应用程序”
+  },
+  “浏览器列表”：{
+    “生产”：[
+      “ >0.2% ”，
+      《没死》，
+      "不是 op_mini 全部”
+    ],
+    “发展”：[
+      “最后 1 个 chrome 版本”，
+      “最后 1 个火狐版本”，
+      "最后 1 个 Safari 版本”
+    ]
+  },
+  “开发依赖”：{
+    “节点萨斯”：“ ^4.13.1 ”
+#杂项
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log * 
+ame: PacktPublishing
+  descripition: 'PacktPublishing book'
+  projects:
+    - name: Mastering-OpenCV-4-with-Python
+      description: 'Mastering-OpenCV-4-with-Python'
+      mirrorRelease: false
+      topic: 'Mastering-OpenCV-4-with-Python'
+      <!DOCTYPE html >
+< html  lang =" en " >
+  <头>
+    <元 字符集=" utf-8 " />
+    <链接 rel ="图标" href =" %PUBLIC_URL%/favicon.ico " />
+    < meta  name =" viewport " content =" width=device-width, initial-scale=1 " />
+    <元 名称="主题颜色"内容=" #000000 "/>
+    <元
+      名称=“描述”
+      content ="使用 create-react-app 创建的网站"
+    />
+    <链接
+      rel =“样式表”
+      href =" https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css "
+      完整性=“ sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh ”
+      跨域=“匿名”
+    />
+    <链接
+      rel =“样式表”
+      href =" https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap "
+    />
+    <!-- 支持 Material Design 的图标 -->
+    <链接
+      rel =“样式表”
+      href =" https://fonts.googleapis.com/icon?family=Material+Icons "
+    />
+    <链接
+      href =" https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&family=Sriracha&display=swap "
+      rel =“样式表”
+    />
+    <链接 rel ="苹果触摸图标" href =" %PUBLIC_URL%/logo192.png " />
+    <!--
+      manifest.json 提供当您的 Web 应用程序安装在
+      用户的移动设备或桌面。请参阅 https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <链接 rel ="清单" href =" %PUBLIC_URL%/manifest.json " />
+    <!--
+      注意在上面的标签中使用了 %PUBLIC_URL%。
+      它将在构建期间替换为“public”文件夹的 URL。
+      只有 `public` 文件夹中的文件可以从 HTML 中引用。
+      与“/favicon.ico”或“favicon.ico”不同，“%PUBLIC_URL%/favicon.ico”将
+      与客户端路由和非根公共 URL 一起正常工作。
+      了解如何通过运行 `npm run build` 来配置非根公共 URL。
+    -->
+    < title > React 应用</ title >
+  </头>
+  <身体>
+    < noscript >您需要启用 JavaScript 才能运行此应用程序。</ noscript >
+    < div  id =" root " > </ div >
+    <!--
+      此 HTML 文件是一个模板。
+      如果您直接在浏览器中打开它，您将看到一个空白页面。
+      您可以向此文件添加网络字体、元标记或分析。
+      构建步骤会将捆绑的脚本放入 <body> 标记中。
+      要开始开发，请运行 `npm start` 或 `yarn start`。
+      要创建生产包，请使用 `npm run build` 或 `yarn build`。
+      “short_name”：“反应应用程序”，
+  “name”：“创建 React 应用示例”，
+  “图标”：[
+    {
+      “src”：“ favicon.ico ”，
+      “尺寸”：“ 64x64 32x32 24x24 16x16 ”，
+      “类型”：“图像/x-icon ”
+    },
+    {
+      “src”：“ logo192.png ”，
+      “类型”：“图像/png ”，
+      “尺寸”：“ 192x192 ”
+    },
+    {
+      “src”：“ logo512.png ”，
+      “类型”：“图像/png ”，
+      “尺寸”：“ 512x512 ”
+    }
+  ],
+  “start_url”：“ . ”，
+  “显示”：“独立”，
+  “主题颜色”：“ #000000 ”，
+  “背景颜色” ：“ #ffffff ”
+  fimain-content-wrapper {
+  background-color: $color-tertiary3 !important;
+  .fidashboard-metrics-container {
+    background-color: $color-tertiary3;
+    border-radius: 2em;
+    .dashboard-datetime-wrapper {
+      padding: 0.7em 1em;
+      background: $color-primary2;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $color-tertiary1;
+      border-radius: 1.2em;
+      .clock-icon {
+        align-items: center;
+        margin-right: 5px;
+
+        color: $color-primary1;
+        fill: $color-primary1;
+      }
+    }
+    //main wrapper
+    .dashboard-metrics-wrapper {
+      margin-top: 2.5em;
+      margin-left: 2.5em;
+      margin-right: 2.5em;
+    }
+  }
+
+  .dashboard-secondary-title {
+    font-size: 1.5rem;
+    color: $color-tertiary1;
+    font-weight: 700;
+  }
+  .profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 1em;
+    margin-right: 1em;
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 3em;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .dashboard-metrics-container {
+      border-radius: 0rem;
+      margin-bottom: 3rem;
+      .dashboard-datetime-wrapper {
+        display: none;
+      }
+    }
+  }
+}
+ 103  
+src/Pages/LandingPage/LandingPage.js
+@@ -0,0 +1,103 @@
+import React from "react";
+// import { Container, Col, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import SideNav from "../../components/SideNav/SideNav";
+import { ReactComponent as Search } from "../../assets/search.svg";
+import { ReactComponent as Checkup } from "../../assets/checkup_svg.svg";
+import { ReactComponent as CheckupSm } from "../../assets/checkupSm.svg";
+import { ReactComponent as Cross } from "../../assets/red-cross.svg";
+import { ReactComponent as Home } from "../../assets/home.svg";
+import { ReactComponent as Settings } from "../../assets/settings.svg";
+import { ReactComponent as Question } from "../../assets/question.svg";
+import { ReactComponent as Heart1 } from "../../assets/heart2.svg";
+import { ReactComponent as Mail } from "../../assets/mail.svg";
+import { useMediaQuery } from "react-responsive";
+import { ReactComponent as Farrow } from "../../assets/filledArrow.svg";
+import Buttons from "../../components/Button/Buttons";
+import Cards from "../../components/Card/Cards";
+const LandingPage = () => {
+  const isMobile = useMediaQuery({
+    query: "(max-device-width: 700px)"
+  });
+  return (
+    <>
+      <main role="main" className="main-wrapper">
+        <div className="sidenav-wrapper">
+          <section className="sidenav-container">
+            <SideNav />
+          </section>
+        </div>
+        <div className="maincontent-wrapper">
+          <div className="fixed-div">
+            <section className="searchbar-wrapper">
+              <div className="searchbar-container">
+                <Search />
+
+                <div className="searchbar-input ml-sm-3">
+                  <input type="text" placeholder="Search for symptoms.." />
+                </div>
+              </div>
+              <div className="brand-sm-wrapper">
+                <div className="brand-sm-icon">
+                  <Cross />
+                </div>
+                <div className="brand-sm-info">Medi</div>
+              </div>
+              <div className="user-icon">
+                <FontAwesomeIcon icon={faUser} size="1x" />
+              </div>
+            </section>
+            <section className="info-section-container">
+              <div className="info-section-info">
+                <div className="Primary-info">
+                  What Specialist are you looking for ?
+                </div>
+                <div className="secondary-info">
+                  Now its so easy to make an appoinment with doctors
+                </div>
+                <div className="secondary-info">
+                  Just use your peronal account to visit
+                </div>
+                <Buttons />
+                <div className="cards-wrapper">
+                  <Cards procedure={"Cardio"} />
+                  <Cards procedure={"Dentistry"} />
+                  <Cards procedure={"Pulmonology"} />
+                </div>
+              </div>
+              <div className="info-section-svg">
+                {isMobile ? <CheckupSm /> : <Checkup />}
+                <div className="seeAll-btn ml-lg-5">
+                  <div className="seeAll-info mr-lg-2">See All</div>
+                  <div className="seeAll-icon">
+                    <Farrow />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div className="sidenav-sm-container">
+          <div style={{ width: "30px", height: "30px" }}>
+            <Home />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Settings />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Question />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Heart1 />
+          </div>
+          <div style={{ width: "30px", height: "30px" }}>
+            <Mail />
+          </div>
+        </div>
+      </main>
+    </>
+  );
+};
+
+export default LandingPage;
+ 253  
+src/Pages/LandingPage/_landingpage.scss
+@@ -0,0 +1,253 @@
+.main-wrapper {
+  background-color: $color-primary1;
+  // border-top-left-radius: 2em;
+  // border-bottom-left-radius: 2em;
+  display: flex;
+  position: relative;
+  .fixed-div {
+    background-image: url("../../assets/blob-shapes.svg");
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position-x: 300px;
+    background-position-y: -500px;
+    background-repeat: no-repeat;
+    border-top-right-radius: 2em;
+  }
+  .sidenav-container {
+    height: 100vh;
+    padding: 0.75em;
+  }
+  .maincontent-wrapper {
+    width: 93%;
+    background-color: $color-primary2;
+    border-radius: 2em;
+
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    .searchbar-wrapper {
+      margin-top: 2.5em;
+      margin-left: 2.5em;
+      margin-right: 2.5em;
+      transition: width 0.5s ease-out;
+      display: flex;
+      justify-content: space-between;
+      .searchbar-container {
+        display: flex;
+        align-items: center;
+        width: 50%;
+
+        .searchbar-input {
+          font-size: 1.3rem;
+
+          width: 100%;
+          input {
+            border: none;
+            font-size: 1.5rem;
+            color: $color-tertiary2;
+            font-weight: 600;
+            width: 100%;
+            background-color: transparent;
+          }
+          input:focus {
+            outline: none;
+          }
+          ::placeholder {
+            color: #e4e5f2;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  .user-icon {
+    color: $color-primary1;
+  }
+
+  //info section
+
+  .info-section-container {
+    display: flex;
+    flex-direction: row;
+    padding: 3.5em;
+    justify-content: space-between;
+    .info-section-info {
+      .Primary-info {
+        font-size: 4rem;
+        font-weight: 800;
+        color: $color-tertiary1;
+      }
+      .secondary-info {
+        font-size: 2rem;
+        color: $color-tertiary2;
+        font-weight: 400;
+      }
+    }
+  }
+  .cards-wrapper {
+    margin-top: 4em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  //see All button
+  .seeAll-btn {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    .seeAll-icon {
+      fill: $color-primary1;
+    }
+    .seeAll-info {
+      font-size: 1.5rem;
+      color: $color-primary1;
+    }
+    &:hover {
+      transform: translateX(5px);
+    }
+    &:active {
+      transform: translateX(0px);
+    }
+  }
+  .sidenav-sm-container {
+    display: none;
+  }
+  //brand sm
+  .brand-sm-wrapper {
+    display: none;
+  }
+}
+
+//media queries
+@media only screen and (max-width: 700px) {
+  .main-wrapper {
+    background-color: $color-primary2;
+    // border-top-left-radius: 2em;
+    // border-bottom-left-radius: 2em;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .fixed-div {
+      background-image: url("../../assets/blob-shapes.svg");
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-size: cover;
+      background-position-x: 300px;
+      background-position-y: -500px;
+      background-repeat: no-repeat;
+      border-top-right-radius: 2em;
+    }
+    .sidenav-container {
+      display: none;
+    }
+    .maincontent-wrapper {
+      width: 100%;
+      background-color: $color-primary2;
+      border-radius: 0;
+      margin: 0;
+
+      .searchbar-wrapper {
+        margin-top: 2.5em;
+        margin-left: 2.3em;
+        margin-right: 2.5em;
+        transition: width 0.5s ease-out;
+        display: flex;
+        justify-content: space-between;
+        .searchbar-container {
+          display: flex;
+          align-items: center;
+          width: 50%;
+
+          .searchbar-input {
+            font-size: 1.3rem;
+            color: $color-tertiary2;
+            width: 100%;
+            input {
+              border: none;
+              color: $color-tertiary2;
+              font-weight: 600;
+              width: 100%;
+            }
+            ::placeholder {
+              color: $color-tertiary2;
+              font-size: 1.5rem;
+            }
+          }
+        }
+        .brand-sm-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .brand-sm-icon {
+            width: 20px;
+            height: 20px;
+            fill: $color-primary1;
+          }
+          .brand-sm-info {
+            font-size: 1.2rem;
+            color: $color-primary1;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .user-icon {
+      color: $color-primary1;
+    }
+
+    //info section
+
+    .info-section-container {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 1em;
+
+      flex: 2;
+      .info-section-info {
+        .Primary-info {
+          font-size: 4rem;
+          font-weight: 800;
+          color: $color-tertiary1;
+        }
+        .secondary-info {
+          font-size: 2rem;
+          color: $color-tertiary2;
+          font-weight: 400;
+        }
+      }
+      .info-section-svg {
+        flex: 1;
+      }
+    }
+    .cards-wrapper {
+      margin-top: 4em;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    //see All button
+    .seeAll-btn {
+      display: none;
+    }
+    //mobile
+    .sidenav-sm-container {
+      background: $color-primary1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      fill: $color-primary2;
+      padding: 1em;
+      position: fixed;
+      width: 100vw;
+      bottom: 0;
+      -webkit-box-shadow: 0px -11px 8px 0px rgba(0, 0, 0, 0.21);
+      box-shadow: 0px -11px 8px 0px rgba(0, 0, 0, 0.21);
+    }
+  }
+}
+ 16  
+src/Sass/abstracts/_base.scss
+@@ -0,0 +1,16 @@
+html {
+  font-size: 62.5%;
+  body {
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    font-family: "Sriracha", cursive;
+    font-family: "Muli", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+ 7  
+src/Sass/abstracts/_variables.scss
+@@ -0,0 +1,7 @@
+$color-primary1: #5c72f2;
+$color-primary2: #ffffff;
+$color-secondary1: #f5734c;
+$color-secondary2: #9bcbde;
+$color-tertiary1: #0f0f0f;
+$color-tertiary2: #a9a9b0;
+$color-tertiary3: #f5f6fc;
+ 21  
+src/Sass/main.scss
+@@ -0,0 +1,21 @@
+//abstracts
+@import "./abstracts/base";
+@import "./abstracts/variables";
+//Pages
+@import "../Pages/LandingPage/landingpage";
+@import "../Pages/Dashboard/dashboard";
+@import "../Pages//FinalDashboard/finaldashboard";
+//components
+@import "../components/SideNav/sidenav";
+@import "../components//Button/buttons";
+@import "../components/Card/cards";
+@import "../components//DiscountsCard/discountscard";
+@import "../components/Graphs/graphs";
+@import "../components/ProfileInfo/profileinfo";
+@import "../components/HealthDetail/healthdetail";
+@import "../components/CalendarSlider/calendarslider";
+@import "../components//upcomingCards/upcomingcard";
+@import "../components//AnalyticsCard/analyticscard";
+@import "../components//MyAppoinments/myappoinments";
+@import "../components/Analyzes/analyzes";
+@import "../components/Payments/payments";
+import React from "react";
+import { Bar } from "react-chartjs-2";
+import { Card } from "react-bootstrap";
+import { ReactComponent as Bpm } from "../../assets/bpm.svg";
+const AnalyticsCard = props => {
+  return (
+    <>
+      {props.name === "analytics" ? (
+        <>
+          {" "}
+          <div className="analytics-card-chart mb-3">
+            <div className="chart-info">
+              <h5 className="card-category text-center">Your Activity</h5>
+            </div>
+
+            <div className="chart-area">
+              <Bar data={chartExample3.data} options={chartExample3.options} />
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="analytics-card mb-3">
+          <div className="analytics-card-info">
+            <div className="analytics-card-info-primary">Heart beat</div>
+            <div className="analytics-card-info-secondary">
+              122<span style={{ fontSize: "1rem", color: "white" }}>bpm</span>
+            </div>
+          </div>
+          <div className="analytics-card-icon">
+            <Bpm />
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+let chartExample3 = {
+  data: canvas => {
+    let ctx = canvas.getContext("2d");
+
+    let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, "rgba(29,140,248,0.2)");
+    gradientStroke.addColorStop(0.4, "rgba(29,140,248,0.0)");
+    gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
+
+    return {
+      labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      datasets: [
+        {
+          label: "Countries",
+          fill: true,
+          backgroundColor: gradientStroke,
+          hoverBackgroundColor: gradientStroke,
+          borderColor: "#1f8ef1",
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          data: [4, 6, 2, 5, 4, 1]
+        }
+      ]
+    };
+  },
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
+    tooltips: {
+      backgroundColor: "#f5f5f5",
+      titleFontColor: "#333",
+      bodyFontColor: "#666",
+      bodySpacing: 4,
+      xPadding: 12,
+      mode: "nearest",
+      intersect: 0,
+      position: "nearest"
+    },
+    responsive: true,
+    scales: {
+      yAxes: [
+        {
+          gridLines: {
+            drawBorder: false,
+            color: "white",
+            zeroLineColor: "transparent"
+          },
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 5,
+            padding: 20,
+            fontColor: "#5c72f2"
+          }
+        }
+      ],
+      xAxes: [
+        {
+          gridLines: {
+            drawBorder: false,
+            color: "white",
+            zeroLineColor: "transparent"
+          },
+          ticks: {
+            padding: 10,
+            fontColor: "#5c72f2"
+          }
+        }
+      ]
+    }
+  }
+};
+
+export default AnalyticsCard;
+ 41  
+src/components/AnalyticsCard/_analyticscard.scss
+@@ -0,0 +1,41 @@
+.analytics-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: $color-primary1;
+  align-items: stretch;
+  border-radius: 1em;
+  width: 47%;
+  &-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-primary {
+      font-size: 1.2rem;
+      color: $color-primary2;
+    }
+    &-secondary {
+      font-size: 5rem;
+      color: $color-primary2;
+    }
+  }
+  &-icon {
+    width: 20rem;
+    height: 15rem;
+    fill: $color-primary2;
+    color: $color-primary2;
+    margin-bottom: 1rem;
+  }
+}
+
+.analytics-card-chart {
+  padding: 1em;
+  border-radius: 1em;
+  background-color: $color-primary2;
+  width: 47%;
+  .chart-info {
+    .card-category {
+      font-size: 1.5rem;
+    }
+  }
+}
+return (
+    <>
+      <div className="analyzes-container mt-5 mr-lg-3 pt-5">
+        <div className="analyzes-info">
+          <div className="analyzes-info-wrapper">
+            <div className="analyzes-info-primary">
+              <div className="analyzes-info-primary-title">Dynamic Hb</div>
+              <div className="analyzes-info-primary-secondary">97/mmho</div>
+              <div className="analyzes-info-primary-secondary">
+                Below Normal
+              </div>
+            </div>
+            <div className="analyzes-info-icon">
+              <Hemo />
+            </div>
+          </div>
+          <div className="analyzes-info-value">
+            <div className="analyzes-info-value-primary">99mmho</div>
+          </div>
+        </div>
+        <div className="analyzes-options">
+          Analyzes
+          <div className="analyzes-options-menu">Hemoglobin</div>
+          <div className="analyzes-options-menu">Hemoglobin</div>
+          <div className="analyzes-options-menu">Hemoglobin</div>
+          <div className="analyzes-options-menu">Hemoglobin</div>
+          <div className="analyzes-options-menu">Hemoglobin</div>
+          <div className="analyzes-options-menu">Hemoglobin</div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Analyzes;
